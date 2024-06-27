@@ -42,15 +42,15 @@ public class get_forex {
          NodeList forexNodeList = tcmbLatest.getElementsByTagName("Currency");
          for (int i = 0; i < forexNodeList.getLength(); i++) {
             Element currencyElement = (Element) forexNodeList.item(i);
-            System.out.println(currencyElement.getAttribute("CurrencyCode"));
-            System.out.println(forex);
+            //System.out.println(currencyElement.getAttribute("CurrencyCode"));
+            //System.out.println(forex);
             if(currencyElement.getAttribute("CurrencyCode").equals(forex)){
                 result = tcmbLatest.getDocumentElement().getAttribute("Tarih") + " tarihinde TCMB'ye göre " + forex + "/TRY alım/satım değerleri.\n";
                 result += "Alım: " + currencyElement.getElementsByTagName("ForexBuying").item(0).getTextContent();
                 result += "Satım: " + currencyElement.getElementsByTagName("ForexSelling").item(0).getTextContent();
             }
          }
-         System.out.println(result);
+         //System.out.println(result);
          return result;
     }
 
